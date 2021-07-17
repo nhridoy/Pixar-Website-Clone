@@ -1,0 +1,68 @@
+{% extends "pixar_studios/base.html" %}
+{% block body_block %}
+    {% load static %}
+    <div class="body">
+        <div style="background-image: url('{% static "images/image-asset (6).jpeg" %}')" class="disneyplus-banner mb-5">
+            <div class="banner-text banner-img d-flex">
+                <h2>{{ title }}</h2>
+            </div>
+        </div>
+
+        <div class="body-main container mt-5 pt-5">
+            <form action="" class="form text-center" method="POST" enctype="multipart/form-data">
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="first-name">First Name</label>
+                    <input class="form-control text-center text-field" type="text" name="first-name" id="first-name"
+                           placeholder="First Name">
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="last-name">Last Name</label>
+                    <input class="form-control text-center text-field" type="text" name="last-name" id="last-name"
+                           placeholder="Last Name" required>
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="email">Email</label>
+                    <input class="form-control text-center text-field" type="email" name="email" id="email"
+                           placeholder="example@mail.com" required>
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="user-name">User Name</label>
+                    <input class="form-control text-center text-field" type="text" name="user-name" id="user-name"
+                           placeholder="username" required>
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="password">Password</label>
+                    <input class="form-control text-center text-field" type="password" name="password" id="password"
+                           placeholder="Password" required>
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="repassword">Retype Password</label>
+                    <input class="form-control text-center text-field" type="password" name="repassword" id="repassword"
+                           placeholder="Retype Password" required>
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="image">Upload Image</label>
+                    <input class="form-control text-center file-field" type="file" accept="image/jpeg, image/png" name="image" id="image">
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="fb-link">Facebook ID Link</label>
+                    <input class="form-control text-center text-field" type="url" name="fb-link" id="fb-link"
+                           placeholder="http://www.facebook.com/userid">
+                </div>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <label class="input-label" for="bio">About You</label>
+                    <textarea name="bio" id="bio" class="form-control textarea-field" cols="30" rows="10" ></textarea>
+                </div>
+                {% csrf_token %}
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <input class="btn btn-outline-primary mt-5" type="submit" name="submit" value="Register" id="regbtn">
+                </div>
+
+            </form>
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <a href="{% url "pixar_studios:login_page" %}">Login</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

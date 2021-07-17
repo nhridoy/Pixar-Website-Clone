@@ -1,0 +1,35 @@
+{% extends "pixar_studios/base.html" %}
+{% block body_block %}
+    {% load static %}
+    <div class="body">
+        <div style="background-image: url('{% static "images/d100_7.pub16.102.jpg" %}')" class="theatrical-shorts-banner mb-5">
+            <div class="banner-text banner-img d-flex">
+                <h2>THEATRICAL SHORTS</h2>
+            </div>
+        </div>
+
+        <div class="body-main container mt-5 pt-5">
+            <div class="description">
+                <p>At Pixar, we LOVE shorts! In fact, our first ventures in storytelling through film were with short films and commercials. Beginning with Luxo Jr., shorts have allowed us to tell stories in different ways than our feature films, but often with just as much emotional impact.
+                    <br><br>
+
+Innovative storytelling has always been at the core of Pixar’s foundation, and our shorts allow the freedom to experiment and develop both new ways to tell stories and new technologies – many of which often then go on to be used in our feature films. Just as important, our short films also allow us to cultivate the next generation of storytellers here at the studio, letting individuals work on smaller teams and often hold leadership positions for the first time.</p>
+            </div>
+            <div class="theatrical-shorts-all">
+                {% for short in theatricalshortsall %}
+                <div class="shorts text-center">
+                    <a href="{% url "pixar_studios:theatrical-short" theatrical_id=short.shorts_title %}">
+                        <img src="{{ short.image.url }}" alt="">
+                    </a>
+                    <p>{{ short.shorts_title }}</p>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,104 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="icon" href="{% static "images/favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "fonts/css/all.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url "pixar_studios:home" %}"><img src="{% static "images/logo5.png" %}" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+            <div class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-flex align-items-lg-center justify-content-lg-center">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="{% url "pixar_studios:feature-films" %}">Feature Films</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="{% url "pixar_studios:theatrical-shorts" %}">Theatrical Shorts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "pixar_studios:disneyplus" %}">Disney+</a>
+                        </li>
+                        <li class="nav-item dropdown profile-nav">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                {% if users.profile_pic %}
+                                    <img class="profile-nav-img" src="{{ users.profile_pic.url }}" alt="">
+                                {% else %}
+                                    <img class="profile-nav-img" src="{% static "images/knick.jpg" %}" alt="">
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item"
+                                       href="{% url "pixar_studios:profile" user_name=user.username %}">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url "pixar_studios:logout_url" %}">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "pixar_studios:registration" %}">Registration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "pixar_studios:login_page" %}">Login</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid px-0">
+    {% block body_block %}
+
+    {% endblock %}
+
+    <div class="foot overflow-hidden">
+        <div class="social-div text-center">
+            <div class="social">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="social-div text-center px-4">
+            <div class="link">
+                <a href="">PRIVACY POLICY</a> | <a href="">TERMS OF USE</a><br>
+                <a href="">YOUR CALIFORNIA PRIVACY RIGHTS</a> | <a href="">CHILDREN’S ONLINE PRIVACY POLICY</a><br>
+                <a href="">INTEREST-BASED ADS</a> | <a href="">DO NOT SELL MY PERSONAL INFORMATION</a><br>
+            </div>
+        </div>
+        <div class="social-div text-center">
+            <div class="footer">© 1986-2021 DISNEY / PIXAR</div>
+        </div>
+    </div>
+
+</div>
+
+<script src="{% static "js/bootstrap.js" %}"></script>
+<script src="{% static "js/script.js" %}"></script>
+</body>
+</html>

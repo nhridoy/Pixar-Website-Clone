@@ -1,0 +1,28 @@
+{% extends "pixar_studios/base.html" %}
+{% block body_block %}
+    {% load static %}
+    <div class="body">
+        <div style="background-image: url('{% static "images/v228_84_pub.pub16_CROP.133.jpg" %}')" class="feature-films-banner mb-5">
+            <div class="banner-text banner-img d-flex">
+                <h2>FEATURE FILMS</h2>
+            </div>
+        </div>
+
+        <div class="body-main container mt-5 pt-5">
+
+            <div class="feature-films-all">
+                <div class="shorts text-center">
+                    <a href="">
+                        <img src="{% static "images/cloudy.jpg" %}" alt="">
+                    </a>
+                    <p>Partly Cloudy</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+{% endblock %}

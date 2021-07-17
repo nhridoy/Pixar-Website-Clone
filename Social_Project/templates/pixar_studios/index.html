@@ -1,0 +1,57 @@
+{% extends "pixar_studios/base.html" %}
+{% block body_block %}
+    {% load static %}
+    <div class="body">
+        {% if user.is_authenticated %}
+            <div style="background-image: url('{% static "images/11.jpg" %}')" class="banner mb-5">
+                <div class="banner-img float-end d-flex">
+                    <img src="{% static "images/logo.png" %}" alt="">
+                </div>
+            </div>
+            <div class="body-main container mt-5">
+                <div class="grid ">
+                    <div class=" text-center">
+                        <div class="card">
+                            <a href="">
+                                <img src="{% static "images/image-asset.jpeg" %}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">CAREERS AT PIXAR</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" text-center">
+                        <div class="card">
+                            <a href="">
+                                <img src="{% static "images/image-asset.jpeg" %}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">CAREERS AT PIXAR</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" text-center">
+                        <div class="card">
+                            <a href="">
+                                <img src="{% static "images/image-asset.jpeg" %}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">CAREERS AT PIXAR</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% else %}
+            <div style="background-image: url('{% static "images/head (2).jpg" %}')" class="disneyplus-banner mb-5">
+                <div class="banner-img d-flex flex-column">
+                    <a href="{% url "pixar_studios:registration" %}" class="btn reg btn-primary">Join for Magic</a>
+                    <a class="text-decoration-none" href="{% url "pixar_studios:login_page" %}">Login</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

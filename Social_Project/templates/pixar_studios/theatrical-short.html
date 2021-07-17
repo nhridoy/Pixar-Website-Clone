@@ -1,0 +1,30 @@
+{% extends "pixar_studios/base.html" %}
+{% block body_block %}
+    {% load static %}
+    <div class="body">
+        <div style="background-image: url('{{ short.title_image.url }}')" class="theatrical-shorts-banner mb-5">
+            <div class="banner-text banner-img d-flex">
+                <h2>{{ short.shorts_title }}</h2>
+            </div>
+        </div>
+
+        <div class="body-main container mt-5 pt-5">
+
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img class="img-fluid" style="width: 100% " src="{{ short.poster.url }}" alt="">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <br>
+                    <p class="p-desc">{{ short.shorts_descriptions }}</p>
+                    <hr style="margin-top: 20px; margin-bottom: 30px">
+                    <img class="img-fluid" src="{{ short.secondary_images.url }}" alt="">
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+
+
+    </div>
+{% endblock %}

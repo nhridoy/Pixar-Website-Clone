@@ -1,0 +1,336 @@
+@import url('http://fonts.cdnfonts.com/css/archia');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --primary-color: #161625;
+    --card-color: #1e1e30;
+    --text-color: #a8b4bf;
+    --form-color: #1e1e30;
+
+    --primary-color-light: #fff;
+    --card-color-light: #fff;
+    --text-color-light: #212529;
+    --form-color-light: #fff;
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    transition: .3s;
+}
+
+body {
+    font-size: 14px;
+}
+
+.navbar {
+    /*height: 80px;*/
+    padding: 33px 118px 33px 118px;
+}
+
+.profile-nav {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.profile-nav-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+}
+
+.reg {
+    width: 50vw;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.banner {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 130vh;
+    /*background-size: contain;*/
+    background-repeat: no-repeat;
+}
+
+.disneyplus-banner {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    /*height: 130vh;*/
+    /*background-size: contain;*/
+    background-repeat: no-repeat;
+}
+
+.profile-banner {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 50vh;
+    /*background-size: contain;*/
+    background-repeat: no-repeat;
+    /*position: relative;*/
+}
+
+.containerp{
+    margin-top: -10%;
+}
+
+.profile{
+    /*position: absolute;*/
+    /*top: 58%;*/
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    /*margin-bottom: 100px;*/
+}
+.profile-pic{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.img-profile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.theatrical-shorts-banner, .feature-films-banner {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100vh;
+    /*background-size: contain;*/
+    background-repeat: no-repeat;
+}
+
+.banner-img {
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+
+}
+
+.banner-text, .theatrical-shorts-banner, .feature-films-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-text h2 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    color: white;
+}
+
+.theatrical-shorts-banner h2 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    color: white;
+}
+
+.description p {
+    line-height: 2rem;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.banner-img img {
+    width: 50%;
+}
+
+.card {
+    border: none;
+}
+
+.grid {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.grid p {
+    text-decoration: none;
+    color: #212529;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.theatrical-shorts-all {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.theatrical-shorts-all p {
+    font-weight: lighter;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.feature-films-all {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.feature-films-all p {
+    font-weight: lighter;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.shorts img {
+    width: 12vw;
+    height: 250px;
+    /*object-fit: cover;*/
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+}
+
+.p-desc {
+    line-height: 2rem;
+    font-size: 16px;
+}
+
+.social i {
+    font-size: 25px;
+    color: #212529;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.social-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social {
+    /*width: 200px;*/
+    padding: 30px;
+}
+
+.social:hover i {
+    color: rgba(27, 27, 27, 0.64);
+}
+
+.social i:hover {
+    color: #212529;
+}
+
+.link a {
+    color: #212529;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+.link a:hover {
+    color: rgba(27, 27, 27, 0.64);
+}
+
+.footer {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+
+.input-label {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.text-field {
+    width: 50vw;
+    height: 50px;
+}
+
+.file-field {
+    width: 50vw;
+}
+
+.textarea-field {
+    width: 50vw;
+    resize: none;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        /*height: 80px;*/
+        padding: 10px 33px 10px 33px;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .banner-text h2 {
+        font-size: 40px;
+        letter-spacing: 1rem;
+        color: white;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid {
+        margin-top: 150px;
+        margin-bottom: 150px;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        /*gap: 2rem;*/
+    }
+
+    .banner-text h2 {
+        font-size: 30px;
+        letter-spacing: 1rem;
+        color: white;
+    }
+
+    .theatrical-shorts-all {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        /*gap: 2rem;*/
+    }
+
+    .theatrical-shorts-all p {
+        font-weight: lighter;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .shorts img {
+        width: 33vw;
+    }
+}
+
+
+@media (max-width: 414px) {
+    .navbar {
+        /*height: 80px;*/
+        padding: 10px 10px 10px 10px;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .banner-text h2 {
+        font-size: 20px;
+        letter-spacing: 1rem;
+        color: white;
+    }
+}
