@@ -130,9 +130,7 @@ def login_page(request):
         username = request.POST.get('user-name')
         password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)
-
-        if user:
+        if user := authenticate(username=username, password=password):
             if user.is_active:
                 login(request, user)
                 # print("Login Ok")
